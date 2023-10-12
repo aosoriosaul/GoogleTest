@@ -10,6 +10,6 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-<APIProxy name="sample-hello-cicd">
+<APIProxy name="acxiom-human-reesources-users-v1">
     <Description>A sample API proxy to demonstrate Apigee CI/CD using CloudBuild</Description>
 </APIProxy>
