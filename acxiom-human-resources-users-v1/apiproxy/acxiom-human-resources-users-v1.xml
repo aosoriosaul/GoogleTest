@@ -1,0 +1,24 @@
+<APIProxy revision="18" name="acxiom-human-resources-users-v1">
+    <DisplayName></DisplayName>
+    <Description>It is created by example</Description>
+    <CreatedAt>1697122710855</CreatedAt>
+    <LastModifiedAt>1697122710855</LastModifiedAt>
+    <BasePaths>/acxiom/human-resources-users/v1</BasePaths>
+    <Policies>
+        <Policy>OA-VerifyToken</Policy>
+        <Policy>FC-JWTSecurity</Policy>
+        <Policy>AM-SetHeader</Policy>
+        <Policy>KVM-Oauth</Policy>
+        <Policy>SC-Send-Oauth2-Credentials</Policy>
+        <Policy>EV-ObtainOauth2Basic</Policy>
+        <Policy>AM-SetHeaderOauth2</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>comments</TargetEndpoint>
+        <TargetEndpoint>default</TargetEndpoint>
+        <TargetEndpoint>post</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

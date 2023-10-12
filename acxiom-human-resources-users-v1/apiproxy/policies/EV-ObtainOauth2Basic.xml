@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables continueOnError="false" enabled="true" name="EV-ObtainOauth2Basic">
+    <DisplayName>EV-ObtainOauth2Basic</DisplayName>
+    <Properties/>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <Source clearPayload="false">tokenResponse</Source>
+    <JSONPayload>
+        <Variable name="token">
+            <JSONPath>$.access_token</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <!--<Source clearPayload="false">tokenResponse</Source>-->
+    <VariablePrefix>apigee</VariablePrefix>
+</ExtractVariables>
