@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations continueOnError="false" enabled="true" name="KVM-Oauth" mapIdentifier="Acxiom-Credentials-Oauth2">
+    <DisplayName>KVM-Oauth</DisplayName>
+    <Properties/>
+    <Get assignTo="private.client_basic">
+        <Key>
+            <Parameter>Basic-Authorization</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

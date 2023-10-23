@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="users">
+            <Description>Query to obtain all the users</Description>
+            <Request>
+                <Step>
+                    <Name>AM-SetHeader</Name>
+                </Step>
+                <Step>
+                    <Name>OA-VerifyToken</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="posts">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>FC-JWTSecurity</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/posts") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="comments">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>AM-SetHeader</Name>
+                </Step>
+                <Step>
+                    <Name>KVM-Oauth</Name>
+                </Step>
+                <Step>
+                    <Name>SC-Send-Oauth2-Credentials</Name>
+                </Step>
+                <Step>
+                    <Name>EV-ObtainOauth2Basic</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SetHeaderOauth2</Name>
+                </Step>
+                <Step>
+                    <Name>OA-VerifyToken</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/comments") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/acxiom/human-resources-users/v1</BasePath>
+    </HTTPProxyConnection>
+    <RouteRule name="posts">
+        <Condition>(proxy.pathsuffix MatchesPath "/posts") and (request.verb = "GET")</Condition>
+        <TargetEndpoint>post</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
