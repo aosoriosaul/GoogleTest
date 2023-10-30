@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>AM-QuitaErrorCabeceros</Name>
+            </Step>
+            <Step>
+                <Name>ML-Apigee-Logging</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="usuarios">
+            <Response/>
+            <Condition>((proxy.pathsuffix MatchesPath "/users") or (proxy.pathsuffix MatchesPath "/users/*")) and (request.verb = "GET")</Condition>
+            <Request/>
+        </Flow>
+        <Flow name="Get">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/get") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="post">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Acxiom-Credentials-JWT</Name>
+                </Step>
+                <Step>
+                    <Name>SC-EnviaCredencialesPosts</Name>
+                </Step>
+                <Step>
+                    <Name>EV-ObtieneJWTAccesoPosts</Name>
+                </Step>
+                <Step>
+                    <Name>AM-CabecerosPosts</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/posts") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/usuarios/v2</BasePath>
+    </HTTPProxyConnection>
+    <RouteRule name="posts">
+        <Condition>(proxy.pathsuffix MatchesPath "/posts") and (request.verb = "GET")</Condition>
+        <TargetEndpoint>post</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="get">
+        <Condition>(proxy.pathsuffix MatchesPath "/get") and (request.verb = "GET")</Condition>
+        <TargetEndpoint>httpbin</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

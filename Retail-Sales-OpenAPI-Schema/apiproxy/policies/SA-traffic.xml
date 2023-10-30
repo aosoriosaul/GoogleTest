@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SpikeArrest continueOnError="false" enabled="true" name="SA-traffic">
+  <DisplayName>SA-traffic</DisplayName>
+  <Properties/>
+  <Identifier ref="request.header.some-header-name"/>
+  <MessageWeight ref="request.header.weight"/>
+  <Rate ref="rpm">5pm</Rate>
+  <UseEffectiveCount>true</UseEffectiveCount>
+</SpikeArrest>

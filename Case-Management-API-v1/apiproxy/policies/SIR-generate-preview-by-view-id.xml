@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SetIntegrationRequest continueOnError="false" enabled="true" name="SIR-generate-preview-by-view-id">
+  <DisplayName>SIR-generate-preview-by-view-id</DisplayName>
+  <ProjectId>logging-in728-vg039</ProjectId>
+  <IntegrationRegion>us-central1</IntegrationRegion>
+  <ApiTrigger>api_trigger/mytriggercustom</ApiTrigger>
+  <Parameters>
+    <!-- <Parameter name="view-id" type="string" ref="view-id"/> -->
+    <Parameter name="input" type="json">{}</Parameter>
+  </Parameters>
+  <Request>integration_request</Request>
+</SetIntegrationRequest>

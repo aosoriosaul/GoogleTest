@@ -1,0 +1,15 @@
+<APIProxy revision="3" name="acxiom-global-security">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1697469384756</CreatedAt>
+    <LastModifiedAt>1697469384756</LastModifiedAt>
+    <BasePaths>/global-security/v1</BasePaths>
+    <Policies>
+        <Policy>OAuthV2-generate</Policy>
+        <Policy>BA-authentication</Policy>
+        <Policy>VA-verify</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+</APIProxy>

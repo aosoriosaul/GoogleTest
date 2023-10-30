@@ -1,0 +1,27 @@
+<APIProxy revision="7" name="test-ip">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1690300788143</CreatedAt>
+    <LastModifiedAt>1690300788143</LastModifiedAt>
+    <BasePaths>/v1/test-ip</BasePaths>
+    <Policies>
+        <Policy>ML-saveip-region</Policy>
+        <Policy>AM-messageEU</Policy>
+        <Policy>AM-messageUS</Policy>
+        <Policy>SC-usBackend</Policy>
+        <Policy>SC-euBackend</Policy>
+        <Policy>FC-logging</Policy>
+        <Policy>JS-ip</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://ip.js</Resource>
+    </Resources>
+    <TargetEndpoints>
+        <TargetEndpoint>EU-TargetEndpoint</TargetEndpoint>
+        <TargetEndpoint>US-TargetEndpoint</TargetEndpoint>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

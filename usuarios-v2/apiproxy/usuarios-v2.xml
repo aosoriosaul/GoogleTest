@@ -1,0 +1,32 @@
+<APIProxy revision="11" name="usuarios-v2">
+    <DisplayName></DisplayName>
+    <Description>Buscando usuarios busqueda de empleados</Description>
+    <CreatedAt>1696953349227</CreatedAt>
+    <LastModifiedAt>1697063581783</LastModifiedAt>
+    <BasePaths>/usuarios/v2</BasePaths>
+    <Policies>
+        <Policy>OA-AccessToken</Policy>
+        <Policy>AM-Cabeceros</Policy>
+        <Policy>KVM-ObtieneToken</Policy>
+        <Policy>SC-EnviaCredenciales</Policy>
+        <Policy>EV-ObtieneTokenAcceso</Policy>
+        <Policy>SC-EnviaCredencialesPosts</Policy>
+        <Policy>EV-ObtieneJWTAccesoPosts</Policy>
+        <Policy>AM-CabecerosPosts</Policy>
+        <Policy>AM-RemoveHeaders</Policy>
+        <Policy>JWT-Verify</Policy>
+        <Policy>BA-test</Policy>
+        <Policy>AM-QuitaErrorCabeceros</Policy>
+        <Policy>VA-Verify-Oauth-Token</Policy>
+        <Policy>ML-Apigee-Logging</Policy>
+        <Policy>Acxiom-Credentials-JWT</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+        <TargetEndpoint>httpbin</TargetEndpoint>
+        <TargetEndpoint>post</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

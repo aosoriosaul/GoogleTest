@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="EU-TargetEndpoint">
+  <Description/>
+  <FaultRules/>
+  <PreFlow name="PreFlow">
+    <Request/>
+    <Response/>
+  </PreFlow>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <Flows>
+    <Flow name="GET">
+      <Description/>
+      <Request/>
+      <Response/>
+      <Condition>request.header.x-request-client-region equals "EU"</Condition>
+    </Flow>
+  </Flows>
+  <HTTPTargetConnection>
+    <Properties/>
+    <URL>https://sbx-yhasson-0.oa.r.appspot.com/user_d</URL>
+  </HTTPTargetConnection>
+</TargetEndpoint>

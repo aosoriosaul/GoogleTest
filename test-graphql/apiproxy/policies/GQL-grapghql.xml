@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GraphQL name="GQL-grapghql">
+  <Source>request</Source>
+  <OperationType>query</OperationType>
+  <MaxDepth>4</MaxDepth>
+  <MaxCount>4</MaxCount>
+  <Action>parse</Action>
+  <!--ResourceURL>graphql://my-schema.graphql</ResourceURL-->
+</GraphQL>

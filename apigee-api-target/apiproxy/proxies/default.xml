@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <Description/>
+  <FaultRules>
+    <FaultRule name="Unauthorized">
+      <Step>
+        <Name>RF-Unauthorized</Name>
+        <Condition>(fault.name Matches "InvalidAccessToken")</Condition>
+        <Condition>(fault.name Matches "InvalidAPICallAsNoApiProductMatchFound")</Condition>
+      </Step>
+    </FaultRule>
+  </FaultRules>
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Name>OAuth-v20-1</Name>
+      </Step>
+      <Step>
+        <Name>RF-Unauthorized</Name>
+        <Condition>(fault.name Matches "access_token_expired")</Condition>
+        <Condition>(fault.name Matches "InvalidAccessToken")</Condition>
+        <Condition>(fault.name Matches "InvalidAPICallAsNoApiProductMatchFound")</Condition>
+      </Step>
+    </Request>
+    <Response>
+      <Step>
+        <Name>EV-gitdemo</Name>
+      </Step>
+    </Response>
+  </PreFlow>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <Flows/>
+  <HTTPProxyConnection>
+    <BasePath>/v1/apigee-api-target/user_c</BasePath>
+    <Properties/>
+    <VirtualHost>default</VirtualHost>
+  </HTTPProxyConnection>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+</ProxyEndpoint>

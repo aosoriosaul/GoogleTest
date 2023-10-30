@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables continueOnError="false" enabled="true" name="EV-frequency-execution-details">
+  <DisplayName>EV-frequency-execution-details</DisplayName>
+  <Properties/>
+  <URIPath name="name"/>
+  <QueryParam name="name"/>
+  <Header name="name"/>
+  <FormParam name="name"/>
+  <Variable name="name"/>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <JSONPayload>
+    <Variable name="job-name">
+      <JSONPath>$.job-name</JSONPath>
+    </Variable>
+    <Variable name="frequency">
+      <JSONPath>$.frequency</JSONPath>
+    </Variable>
+  </JSONPayload>
+  <Source clearPayload="false">request</Source>
+  <VariablePrefix>frequency-execution-details</VariablePrefix>
+</ExtractVariables>

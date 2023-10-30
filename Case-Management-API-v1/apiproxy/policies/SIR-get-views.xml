@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SetIntegrationRequest continueOnError="false" enabled="true" name="SIR-get-views">
+  <DisplayName>SIR-get-views</DisplayName>
+  <ProjectId>logging-in728-vg039</ProjectId>
+  <IntegrationRegion>us-central1</IntegrationRegion>
+  <ApiTrigger>api_trigger/firestore-get-catalogs_TGR-get-all</ApiTrigger>
+  <Request>integration_request</Request>
+</SetIntegrationRequest>

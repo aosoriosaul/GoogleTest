@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MessageLogging continueOnError="false" enabled="true" name="ML-Apigee-Logging">
+    <DisplayName>ML-Apigee-Logging</DisplayName>
+    <CloudLogging>
+        <!-- Note: You cannot use both the <CloudLogging> and the <Syslog> element in the same policy. -->
+        <LogName>projects/{organization.name}/logs/apigeex</LogName>
+        <Message contentType="application/json">
+            {
+                "message":"Display logs from usuarios",
+                "response_content" : "{response.content}",
+                "response_method" : "{response.status.code}",
+                "response_phrase" : "{response.reason.phase}"
+            }
+        </Message>
+        <Labels>
+            <Label>
+                <Key>Service</Key>
+                <Value>Apigee</Value>
+            </Label>
+            <Label>
+                <Key>Proxy</Key>
+                <Value>usuarios-v2</Value>
+            </Label>
+        </Labels>
+        <ResourceType>api</ResourceType>
+    </CloudLogging>
+    <logLevel>INFO</logLevel>
+</MessageLogging>

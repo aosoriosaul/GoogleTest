@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables continueOnError="false" enabled="true" name="EV-extract-view-id">
+  <DisplayName>EV-extract-view-id</DisplayName>
+  <Properties/>
+  <URIPath>
+    <Pattern ignoreCase="false">/views/{view-id}</Pattern>
+    <Pattern ignoreCase="false">/views/{view-id}/preview</Pattern>
+  </URIPath>
+</ExtractVariables>

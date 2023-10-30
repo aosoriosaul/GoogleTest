@@ -1,0 +1,16 @@
+<APIProxy revision="3" name="example-logging">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1691428027190</CreatedAt>
+    <LastModifiedAt>1691428027190</LastModifiedAt>
+    <BasePaths>/example-logging</BasePaths>
+    <Policies>
+        <Policy>ML-logs</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

@@ -1,0 +1,13 @@
+<APIProxy revision="2" name="test-depliegue-prod">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1690498372286</CreatedAt>
+    <LastModifiedAt>1690498372286</LastModifiedAt>
+    <BasePaths>/test-depliegue-prod</BasePaths>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

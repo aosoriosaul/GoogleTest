@@ -1,0 +1,17 @@
+<APIProxy revision="2" name="jwt-decode-proxy">
+    <DisplayName>Hello World</DisplayName>
+    <Description>An example API proxy.</Description>
+    <CreatedAt>1690217784223</CreatedAt>
+    <LastModifiedAt>1690217784223</LastModifiedAt>
+    <BasePaths>/hello-world</BasePaths>
+    <Policies>
+        <Policy>EV-gitdemo</Policy>
+        <Policy>JWT-decode1</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

@@ -1,0 +1,18 @@
+<APIProxy revision="2" name="apigee-api-target">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1690162892467</CreatedAt>
+    <LastModifiedAt>1690162892467</LastModifiedAt>
+    <BasePaths>/v1/apigee-api-target/user_c</BasePaths>
+    <Policies>
+        <Policy>EV-gitdemo</Policy>
+        <Policy>OAuth-v20-1</Policy>
+        <Policy>RF-Unauthorized</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

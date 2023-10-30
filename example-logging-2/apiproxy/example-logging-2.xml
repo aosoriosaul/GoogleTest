@@ -1,0 +1,16 @@
+<APIProxy revision="2" name="example-logging-2">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1691432699938</CreatedAt>
+    <LastModifiedAt>1691432699938</LastModifiedAt>
+    <BasePaths>/example-logging-2</BasePaths>
+    <Policies>
+        <Policy>LogToCloudLogging</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

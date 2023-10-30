@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Name>CORS</Name>
+      </Step>
+      <Step>
+        <Name>verify-api-key</Name>
+      </Step>
+      <Step>
+        <Name>remove-query-param-apikey</Name>
+      </Step>
+    </Request>
+    <Response/>
+  </PreFlow>
+  <Flows>
+    <Flow name="GET /views">
+      <Description>Get available views and filters</Description>
+      <Request>
+        <Step>
+          <Name>SIR-get-views</Name>
+        </Step>
+        <Step>
+          <Name>Int-integration-callout</Name>
+        </Step>
+      </Request>
+      <Response>
+        <Step>
+          <Name>AM-set-integration-response</Name>
+        </Step>
+        <Step>
+          <Name>EV-set-response-from-integration</Name>
+        </Step>
+      </Response>
+      <Condition>(proxy.pathsuffix MatchesPath "/views") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="GET /views/*">
+      <Description>Execute a view</Description>
+      <Request>
+        <Step>
+          <Name>EV-extract-view-id</Name>
+        </Step>
+        <Step>
+          <Name>SIR-get-view-by-id</Name>
+        </Step>
+        <Step>
+          <Name>Int-integration-callout</Name>
+        </Step>
+      </Request>
+      <Response>
+        <Step>
+          <Name>AM-set-integration-response</Name>
+        </Step>
+        <Step>
+          <Name>EV-set-response-from-integration</Name>
+        </Step>
+      </Response>
+      <Condition>(proxy.pathsuffix MatchesPath "/views/*") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="GET /views/*/preview">
+      <Description>Execute a preview</Description>
+      <Request>
+        <Step>
+          <Name>EV-extract-view-id</Name>
+        </Step>
+        <Step>
+          <Name>SIR-generate-preview-by-view-id</Name>
+        </Step>
+        <Step>
+          <Name>Int-integration-callout</Name>
+        </Step>
+      </Request>
+      <Response>
+        <Step>
+          <Name>AM-set-integration-response</Name>
+        </Step>
+        <Step>
+          <Name>EV-set-response-from-integration-get-preview</Name>
+        </Step>
+      </Response>
+      <Condition>(proxy.pathsuffix MatchesPath "/views/*/preview") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="POST /assignment-config">
+      <Description/>
+      <Request>
+        <Step>
+          <Name>SIR-set-assignment-config-request</Name>
+        </Step>
+        <Step>
+          <Name>Int-integration-callout</Name>
+        </Step>
+      </Request>
+      <Response>
+        <Step>
+          <Name>AM-set-integration-response</Name>
+        </Step>
+      </Response>
+      <Condition>(proxy.pathsuffix MatchesPath "/assignment-config") and (request.verb = "POST")</Condition>
+    </Flow>
+    <Flow name="POST /frequency-execution">
+      <Description>Set the frequency execution</Description>
+      <Request>
+        <Step>
+          <Name>EV-frequency-execution-details</Name>
+        </Step>
+        <Step>
+          <Name>SIR-set-frequency-execution</Name>
+        </Step>
+        <Step>
+          <Name>Int-integration-callout</Name>
+        </Step>
+      </Request>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/frequency-execution") and (request.verb = "POST")</Condition>
+    </Flow>
+  </Flows>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <HTTPProxyConnection>
+    <BasePath>/v1/case-management-api</BasePath>
+  </HTTPProxyConnection>
+  <RouteRule name="default">
+  </RouteRule>
+</ProxyEndpoint>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-CabecerosPosts">
+  <DisplayName>AM-CabecerosPosts</DisplayName>
+  <Properties/>
+  <Set>
+    <Verb>GET</Verb>
+    <Headers>
+      <!--<Header name="www-authenticateapigee.tokenResponse.header.">{apigee.token}</Header>-->
+      <Header name="Content-Type">application/json</Header>
+      <Header name="Accept-Encoding">gzip, deflate</Header>
+      <Header name="jwt-token">{apigee.jwtResponse.header.jwt-token}</Header>
+    </Headers>
+  </Set>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

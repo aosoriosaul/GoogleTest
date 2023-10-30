@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FlowCallout continueOnError="false" enabled="true" name="FC-logging">
+  <DisplayName>FC-logging</DisplayName>
+  <FaultRules/>
+  <Properties/>
+  <SharedFlowBundle>SF-logging</SharedFlowBundle>
+</FlowCallout>

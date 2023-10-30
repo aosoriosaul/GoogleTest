@@ -1,0 +1,13 @@
+<APIProxy revision="1" name="sample-cloud-run">
+    <DisplayName></DisplayName>
+    <Description>A sample API proxy to demonstrate Cloud Run Invocation from Apigee using CloudBuild</Description>
+    <CreatedAt>1690163376776</CreatedAt>
+    <LastModifiedAt>1690163376776</LastModifiedAt>
+    <BasePaths>/v1/samples/cloud-run-sample</BasePaths>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

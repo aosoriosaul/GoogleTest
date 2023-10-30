@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MessageLogging continueOnError="false" enabled="true" name="ML-ResponseFromServer">
+  <DisplayName>ML-ResponseFromServer</DisplayName>
+  <CloudLogging>
+    <LogName>projects/apigee-prod-370323/logs/apigee-dev-logger</LogName>
+    <Message contentType="text/plain">{
+    "message": "Displaying logs from cache-test Proxy",
+    "is_cache": {responsecache.RC-QuickResponse.cachehit},
+    "response": {response.content},
+    }</Message>
+    <Labels>
+      <Label>
+        <Key>Service</Key>
+        <Value>Apigee</Value>
+      </Label>
+      <Label>
+        <Key>ProxyName</Key>
+        <Value>Cache-Test</Value>
+      </Label>
+    </Labels>
+    <ResourceType>api</ResourceType>
+  </CloudLogging>
+  <logLevel>INFO</logLevel>
+</MessageLogging>

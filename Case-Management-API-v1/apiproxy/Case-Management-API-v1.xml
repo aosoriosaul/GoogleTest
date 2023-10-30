@@ -1,0 +1,29 @@
+<APIProxy revision="1" name="Case-Management-API-v1">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1686162006051</CreatedAt>
+    <LastModifiedAt>1686162006051</LastModifiedAt>
+    <BasePaths>/v1/case-management-api</BasePaths>
+    <Policies>
+        <Policy>verify-api-key</Policy>
+        <Policy>remove-query-param-apikey</Policy>
+        <Policy>SIR-get-views</Policy>
+        <Policy>SIR-get-view-by-id</Policy>
+        <Policy>EV-extract-view-id</Policy>
+        <Policy>SIR-generate-preview-by-view-id</Policy>
+        <Policy>Int-integration-callout</Policy>
+        <Policy>AM-set-integration-response</Policy>
+        <Policy>EV-set-response-from-integration</Policy>
+        <Policy>SIR-set-frequency-execution</Policy>
+        <Policy>EV-frequency-execution-details</Policy>
+        <Policy>CORS</Policy>
+        <Policy>EV-set-response-from-integration-get-preview</Policy>
+        <Policy>SIR-set-assignment-config-request</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <IntegrationEndpoints>
+        <IntegrationEndpoint>IntegrationEndpoint</IntegrationEndpoint>
+    </IntegrationEndpoints>
+</APIProxy>

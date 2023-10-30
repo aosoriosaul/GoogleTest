@@ -1,0 +1,15 @@
+<APIProxy revision="2" name="oauth2">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1697059948382</CreatedAt>
+    <LastModifiedAt>1697059948382</LastModifiedAt>
+    <BasePaths>/oauth2</BasePaths>
+    <Policies>
+        <Policy>OAuthV2-generate</Policy>
+        <Policy>BA-authentication</Policy>
+        <Policy>VA-verify</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+</APIProxy>

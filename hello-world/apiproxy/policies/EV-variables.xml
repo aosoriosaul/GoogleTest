@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables continueOnError="false" enabled="true" name="EV-variables">
+  <DisplayName>EV-variables</DisplayName>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <JSONPayload>
+    <Variable name="name">
+      <JSONPath>{$.firstName}</JSONPath>
+    </Variable>
+    <Variable name="surname">
+      <JSONPath>{$.lastName}</JSONPath>
+    </Variable>
+    <Variable name="city">
+      <JSONPath>{$.city}</JSONPath>
+    </Variable>
+    <Variable name="state">
+      <JSONPath>{$.state}</JSONPath>
+    </Variable>
+    <Variable name="otherName">
+      <JSONPath>{$.request.queryparam.name}</JSONPath>
+    </Variable>
+  </JSONPayload>
+  <Source clearPayload="false">request</Source>
+  <VariablePrefix>apigee</VariablePrefix>
+</ExtractVariables>

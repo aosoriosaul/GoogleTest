@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SetIntegrationRequest continueOnError="false" enabled="true" name="set-integration-request">
+  <DisplayName>Set Integration Request</DisplayName>
+  <ProjectId ref="organization.name"/>
+  <IntegrationName>pubsub-test</IntegrationName>
+  <IntegrationRegion ref="system.region.name"/>
+  <ApiTrigger>api_trigger/pubsub-test_API_1</ApiTrigger>
+  <Request>request</Request>
+  <!--
+        <Parameters> defines the input parameters to send with the request. Parameters can be int, boolean, String, double, int array, boolean array, String array, double array, and JSON.
+  
+        Uncomment the parameters below and modify as needed.
+    -->
+  <Parameters>
+    <!---->
+    <Parameter name="proxy.client.ip" type="string" ref="proxy.client.ip"/>
+    <Parameter name="output" type="boolean" ref="request.queryparam.output">true</Parameter>
+    <Parameter name="name" type="string" ref="request.queryparam.name">null</Parameter>
+    <!-- <Parameter name="json_payload" type="json">{name1:"$#request.queryparam.name1#$" name2:"$#request.queryparam.name2#$"}</Parameter>
+    <Parameter name="quantity" type="integer">11</Parameter>
+    <Parameter name="id" type="integer">1</Parameter>
+    <Parameter name="doubleExample" type="double">1.0</Parameter>
+    <Parameter name="jsonExample" type="json">{}</Parameter>
+    <ParameterArray name="intArrayExample" type="integer">
+      <Value>1</Value>
+      <Value>2</Value>
+      <Value>3</Value>
+    </ParameterArray>
+    <ParameterArray name="booleanArrayExample" type="boolean">
+      <Value>true</Value>
+      <Value>false</Value>
+    </ParameterArray>-->
+  </Parameters>
+</SetIntegrationRequest>

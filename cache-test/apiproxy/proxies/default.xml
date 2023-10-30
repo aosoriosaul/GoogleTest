@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Name>RC-QuickResponse</Name>
+      </Step>
+      <Step>
+        <Name>AM-CacheHit</Name>
+      </Step>
+    </Request>
+    <Response>
+      <Step>
+        <Name>RC-QuickResponse</Name>
+      </Step>
+      <Step>
+        <Name>AM-CacheHit</Name>
+      </Step>
+    </Response>
+  </PreFlow>
+  <Flows>
+    <Flow name="/forecaster">
+      <Description/>
+      <Request/>
+      <Response>
+        <Step>
+          <Name>ML-ResponseFromServer</Name>
+        </Step>
+      </Response>
+      <Condition>(proxy.pathsuffix MatchesPath "/forecaster") and (request.verb = "GET")</Condition>
+    </Flow>
+  </Flows>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <HTTPProxyConnection>
+    <BasePath>/cache-test</BasePath>
+  </HTTPProxyConnection>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+</ProxyEndpoint>

@@ -1,0 +1,21 @@
+<APIProxy revision="11" name="test-graphql">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1691078902010</CreatedAt>
+    <LastModifiedAt>1691078902010</LastModifiedAt>
+    <BasePaths>/test-graphql</BasePaths>
+    <Policies>
+        <Policy>GQL-grapghql</Policy>
+        <Policy>VA-restrictAccess</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>graphql://my-schema.graphql</Resource>
+        <Resource>jsc://check-graphql.js</Resource>
+    </Resources>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

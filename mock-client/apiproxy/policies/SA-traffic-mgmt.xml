@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SpikeArrest continueOnError="false" enabled="true" name="SA-traffic-mgmt">
+  <DisplayName>SA-traffic-mgmt</DisplayName>
+  <!--<Properties/>
+  <Identifier ref="request.header.some-header-name"/>
+  <MessageWeight ref="request.header.weight"/>-->
+    <Rate>1ps</Rate>
+    <!-->
+    <UseEffectiveCount>true</UseEffectiveCount>-->
+  </SpikeArrest>

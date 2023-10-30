@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Name>VA-restrictAccess</Name>
+      </Step>
+      <Step>
+        <Name>Q-quotaCount</Name>
+      </Step>
+      <Step>
+        <Name>SA-traffic</Name>
+      </Step>
+    </Request>
+    <Response/>
+  </PreFlow>
+  <Flows>
+    <Flow name="verify-geographic-address">
+      <Description>Evaluate that a given input address is complete and valid. &amp;lt;br&amp;gt;  Return addresses with any necessary corrections.</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/geo/addresses") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="verify-geographic-address-by-coordinates">
+      <Description>Evaluate that a given input address is complete and valid. &amp;lt;br&amp;gt;  Return addresses with any necessary corrections.</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/geo/coordinates") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="agreements">
+      <Description>Retrieve agreements. Use agreement_type SALES for preview-products, avaialbe-products, add-ons, and closing-offers operations. Use agreement_type FULFILLMENT for available-appointments operations.</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/retail/agreements/agreements") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="get_available_products">
+      <Description>List of products available based on sales_agreement/location combination</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/sales/products/available-products") and (request.verb = "POST")</Condition>
+    </Flow>
+    <Flow name="get_preview_products">
+      <Description>List of products available based on sales_agreement/location combination - specifically for plan previews (No customer info)</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/sales/products/preview-products") and (request.verb = "POST")</Condition>
+    </Flow>
+    <Flow name="get_add_ons">
+      <Description>List of add-ons available based on sales_agreement/product_instance_id</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/sales/products/add-ons") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="get_closing_offers">
+      <Description>List of closing-offers available based on sales_agreement/product_instance_id</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/sales/products/closing-offers") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="add-customer">
+      <Description>Add a customer</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/customer/customers") and (request.verb = "POST")</Condition>
+    </Flow>
+    <Flow name="show-customer">
+      <Description>Info for a specific customer</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/customer/customers/*") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="change-customer">
+      <Description>Change contact methods for a specific customer
+        
+        **Supported customer patch commands**
+        
+        | Patch Command |    Valid Paths      |          Value                         |
+        | --------------| ----------------    | ------------------------------------   |
+        | replace       | /                   | main fields in customer like given_name|
+        |               |                     |                                        |
+        | replace      | /contact/primary    | email, phone number, address object   |
+        | remove       | /contact/secondary  |                                        |
+        | add           | /contact/billing    |                                        |
+        |               | /contact/invoice    |                                        |
+        |               | /contact/shipping   |</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/customer/customers/*") and (request.verb = "PATCH")</Condition>
+    </Flow>
+    <Flow name="add_shopping_cart_item">
+      <Description>Create a shopping_cart and add an Item</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/sales/cart/items") and (request.verb = "POST")</Condition>
+    </Flow>
+    <Flow name="extend_shopping_cart_item">
+      <Description>Extend an existing item in an existing shopping_cart</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/sales/cart/items") and (request.verb = "PATCH")</Condition>
+    </Flow>
+    <Flow name="remove_shopping_cart_item">
+      <Description>Remove an item from an existing shopping_cart</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/sales/cart/*/items/*") and (request.verb = "DELETE")</Condition>
+    </Flow>
+    <Flow name="configure_cart_item">
+      <Description>This configures a cart item by adding to a service_type</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/sales/cart/*/items/*") and (request.verb = "PATCH")</Condition>
+    </Flow>
+    <Flow name="get_tax_code">
+      <Description>This will retrieve a specific tax_codes associated with an address</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/billing/tax-codes") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="add_billing_account">
+      <Description>This will add or create a billing_account</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/billing/accounts") and (request.verb = "POST")</Condition>
+    </Flow>
+    <Flow name="get-available-appointments-deprecated">
+      <Description>list of available schedule dates that can later be used to schedule an appointment for a work order</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/fulfillment/available-appointments") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="get-available-appointments">
+      <Description>list of available schedule dates that can later be used to schedule an appointment for a work order</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/fulfillment/appointments") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="get-work-order-details">
+      <Description>list of available schedule dates that can later be used to schedule an appointment for a work order</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/fulfillment/work-orders") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="schedule-appointment">
+      <Description>Schedule an appointment.</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/fulfillment/appointments/schedule") and (request.verb = "POST")</Condition>
+    </Flow>
+    <Flow name="get_shopping_cart">
+      <Description>Get the individual cart</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/sales/cart/*") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="finalize-shopping-cart">
+      <Description>Puts the shopping cart into ACCEPTED status</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/sales/cart/*") and (request.verb = "POST")</Condition>
+    </Flow>
+    <Flow name="finalizeShoppingCart">
+      <Description>Puts the shopping cart into ACCEPTED status</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/sales/cart/*") and (request.verb = "PATCH")</Condition>
+    </Flow>
+    <Flow name="submit-order">
+      <Description>This will submit an order and consolidate a collection of information to support the activation of the customer's service, including order line items along with additional products, service appointment for installation, and sales agreement ID.</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/retail/orders") and (request.verb = "POST")</Condition>
+    </Flow>
+    <Flow name="get-order">
+      <Description>This will retrieve a specific order</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/retail/orders/*") and (request.verb = "GET")</Condition>
+    </Flow>
+    <Flow name="update-order">
+      <Description>This will make a change to the order</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/retail/orders/*") and (request.verb = "PATCH")</Condition>
+    </Flow>
+    <Flow name="subscribe-events">
+      <Description>This POST will subscribe a partner to events</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/retail/orders/events/subscribe") and (request.verb = "POST")</Condition>
+    </Flow>
+    <Flow name="unsubscribe-events">
+      <Description>This POST will unsubscribe a partner from a previous subscription</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/retail/orders/events/unsubscribe") and (request.verb = "POST")</Condition>
+    </Flow>
+    <Flow name="create-payment-transaction">
+      <Description>Create a payment transaction with required details for a one time or recurring payment.  Payment type information like credit card or ACH are NOT included in this step.</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/payment/transactions") and (request.verb = "POST")</Condition>
+    </Flow>
+    <Flow name="pay-by-link">
+      <Description>Create a url to use a pay-by-link instead of subjecting to the PCI scope</Description>
+      <Request/>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath "/v1/payment/pay-by-link") and (request.verb = "POST")</Condition>
+    </Flow>
+  </Flows>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <HTTPProxyConnection>
+    <BasePath>/retail-sales-openapi-schema</BasePath>
+  </HTTPProxyConnection>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+</ProxyEndpoint>

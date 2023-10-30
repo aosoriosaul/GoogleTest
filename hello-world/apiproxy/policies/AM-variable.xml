@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-variable">
+  <DisplayName>AM-variable</DisplayName>
+  <Add>
+    <Headers/>
+    <FormParams/>
+  </Add>
+  <Set>
+    <Headers/>
+    <QueryParams>
+      <QueryParam name="name" type="string" ref="request.queryparam.name">{request.queryparam.name}</QueryParam>
+    </QueryParams>
+    <FormParams/>
+    <!-- <Verb>GET</Verb> -->
+    <Path/>
+  </Set>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

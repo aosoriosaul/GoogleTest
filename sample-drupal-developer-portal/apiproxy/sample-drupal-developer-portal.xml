@@ -1,0 +1,17 @@
+<APIProxy revision="1" name="sample-drupal-developer-portal">
+    <DisplayName></DisplayName>
+    <Description>An API key protected proxy for a Drupal developer portal</Description>
+    <CreatedAt>1690148385052</CreatedAt>
+    <LastModifiedAt>1690148385052</LastModifiedAt>
+    <BasePaths>/v1/samples/drupal-developer-portal</BasePaths>
+    <Policies>
+        <Policy>CORS-AddCORS</Policy>
+        <Policy>VA-VerifyKey</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

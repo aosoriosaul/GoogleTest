@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<BasicAuthentication continueOnError="false" enabled="false" name="BA-authentication">
+  <DisplayName>BA-authentication</DisplayName>
+  <Operation>Decode</Operation>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <User ref="flow.consumerkey"/>
+  <Password ref="flow.consumersecret"/>
+  <AssignTo createNew="false">request.header.Authorization</AssignTo>
+  <Source>request.header.Authorization</Source>
+</BasicAuthentication>

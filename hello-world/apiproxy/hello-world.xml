@@ -1,0 +1,17 @@
+<APIProxy revision="9" name="hello-world">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1691163038646</CreatedAt>
+    <LastModifiedAt>1691163038646</LastModifiedAt>
+    <BasePaths>/hello-test</BasePaths>
+    <Policies>
+        <Policy>EV-variables</Policy>
+        <Policy>AM-variable</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

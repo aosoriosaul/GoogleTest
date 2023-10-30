@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-RemoveHeaders">
+  <DisplayName>AM-RemoveHeaders</DisplayName>
+  <Properties/>
+  <Remove>
+    <Headers>
+      <Header name="Alt-Svc"/>
+      <Header name="via"/>
+      <Header name="Content-Length"/>
+      <Header name="x-b3-sampled"/>
+      <Header name="x-b3-spanid"/>
+      <Header name="x-b3-traceid"/>
+      <Header name="x-cloud-trace-context"/>
+      <Header name="x-envoy-attemp-count"/>
+      <Header name="x-request-id"/>
+    </Headers>
+    <QueryParams>
+      <QueryParam name="q1"/>
+    </QueryParams>
+    <FormParams>
+      <FormParam name="f1"/>
+    </FormParams>
+    <Payload/>
+  </Remove>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

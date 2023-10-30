@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SetIntegrationRequest continueOnError="false" enabled="true" name="SIR-set-frequency-execution">
+  <DisplayName>SIR-set-frequency-execution</DisplayName>
+  <ProjectId>logging-in728-vg039</ProjectId>
+  <IntegrationRegion>us-central1</IntegrationRegion>
+  <ApiTrigger>api_trigger/create-scheduler_API_1</ApiTrigger>
+  <Parameters>
+    <Parameter name="input" type="json">
+      {
+        "jobName": "$#frequency-execution-details.job-name#$",
+        "frequency": "$#frequency-execution-details.frequency#$"
+      }
+    </Parameter>
+  </Parameters>
+  <Request>integration_request</Request>
+</SetIntegrationRequest>

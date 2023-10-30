@@ -3,5 +3,5 @@
     <DisplayName>FC-JWTSecurity</DisplayName>
     <FaultRules/>
     <Properties/>
-    <SharedFlowBundle>SF-Acxiom-JWT-Ext</SharedFlowBundle>
+    <SharedFlowBundle>sf-google-jwt-ext</SharedFlowBundle>
 </FlowCallout>

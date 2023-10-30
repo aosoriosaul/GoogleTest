@@ -1,0 +1,24 @@
+<APIProxy revision="2" name="FHIR-API-v1">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1686320140646</CreatedAt>
+    <LastModifiedAt>1686320140646</LastModifiedAt>
+    <BasePaths>/v1/fhir/r4</BasePaths>
+    <Policies>
+        <Policy>JS-Replace-URL</Policy>
+        <Policy>add-cors</Policy>
+        <Policy>remove-header-apikey</Policy>
+        <Policy>FC-Common-Config</Policy>
+        <Policy>VA-verify-api-key</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://JS-Replace-URL.js</Resource>
+    </Resources>
+    <TargetEndpoints>
+        <TargetEndpoint>dataset-final</TargetEndpoint>
+        <TargetEndpoint>dataset-preliminary</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

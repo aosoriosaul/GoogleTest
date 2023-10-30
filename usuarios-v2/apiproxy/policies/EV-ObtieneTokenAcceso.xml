@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables continueOnError="false" enabled="true" name="EV-ObtieneTokenAcceso">
+  <DisplayName>EV-ObtieneTokenAcceso</DisplayName>
+  <Properties/>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <Source clearPayload="false">tokenResponse</Source>
+  <Header name="via">
+    <Pattern>{tokenResponse.header.via}</Pattern>
+  </Header>
+  <Header name="Alt-Svc">
+    <Pattern ignoreCase="false">{tokenResponse.header.Alt-Svc}</Pattern>
+  </Header>
+  <JSONPayload>
+    <Variable name="token">
+      <JSONPath>$.access_token</JSONPath>
+    </Variable>
+  </JSONPayload>
+  <!--<Source clearPayload="false">tokenResponse</Source>-->
+  <VariablePrefix>apigee</VariablePrefix>
+</ExtractVariables>

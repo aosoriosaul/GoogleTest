@@ -1,0 +1,17 @@
+<APIProxy revision="1" name="int-callout-proxy">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1690163505775</CreatedAt>
+    <LastModifiedAt>1690163505775</LastModifiedAt>
+    <BasePaths>/v2/integration-proxy</BasePaths>
+    <Policies>
+        <Policy>set-integration-request</Policy>
+        <Policy>Int-call</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <IntegrationEndpoints>
+        <IntegrationEndpoint>default</IntegrationEndpoint>
+    </IntegrationEndpoints>
+</APIProxy>

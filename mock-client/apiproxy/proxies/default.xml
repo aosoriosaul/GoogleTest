@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <DefaultFaultRule>
+    <AlwaysEnforce>true</AlwaysEnforce>
+    <!--aquí va una especial que siempre caiga ahí si no coincide con otros errores, la lista evaluara de abajo hacia arriab>
+    <Step>
+      <Name>RF-Unauthorized</Name>
+      <Condition>(fault.name Matches "InvalidAccessToken")</Condition>
+      <Name>RF-quota</Name>
+      <Condition>(fault.name Matches "QuotaViolation")</Condition>
+    </Step-->
+  </DefaultFaultRule>
+  <FaultRules>
+    <FaultRule name="Quota Violation">
+      <Step>
+        <Name>RF-quota</Name>
+        <Condition>(fault.name Matches "QuotaViolation")</Condition>
+      </Step>
+    </FaultRule>
+    <FaultRule name="Unauthorized">
+      <Step>
+        <Name>RF-Unauthorized</Name>
+        <Condition>(fault.name Matches "InvalidAccessToken")</Condition>
+        <Condition>(fault.name Matches "InvalidAPICallAsNoApiProductMatchFound")</Condition>
+      </Step>
+    </FaultRule>
+  </FaultRules>
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Name>OAuth-v20-1</Name>
+      </Step>
+      <Step>
+        <Name>RF-Unauthorized</Name>
+        <Condition>(fault.name Matches "access_token_expired")</Condition>
+      </Step>
+      <Step>
+        <Name>SA-traffic-mgmt</Name>
+      </Step>
+      <Step>
+        <Name>Quota-1</Name>
+      </Step>
+      <Step>
+        <Name>RF-quota</Name>
+        <Condition>(fault.name Matches "QuotaViolation")</Condition>
+        <Condition>ratelimit.Quota-1.failed=true</Condition>
+        <!--Condition>policies.ratelimit.QuotaViolation = true</Condition-->
+      </Step>
+    </Request>
+    <Response>
+      <Step>
+        <Name>EV-gitdemo</Name>
+      </Step>
+      <Step>
+        <Name>AM-gitdemo</Name>
+      </Step>
+      <Step>
+        <Name>J2X-gitdemo</Name>
+      </Step>
+    </Response>
+  </PreFlow>
+  <Flows/>
+  <PostFlow name="PostFlow">
+    <Request>
+    </Request>
+    <Response/>
+  </PostFlow>
+  <PostClientFlow name="PostClientFlow">
+    <Response>
+      <Step>
+        <Name>FC-logging</Name>
+      </Step>
+    </Response>
+  </PostClientFlow>
+  <HTTPProxyConnection>
+    <BasePath>/v3/demo</BasePath>
+  </HTTPProxyConnection>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+</ProxyEndpoint>

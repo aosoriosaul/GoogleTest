@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout continueOnError="false" enabled="true" name="SC-EnviaCredencialesPosts">
+    <DisplayName>SC-EnviaCredencialesPosts</DisplayName>
+    <Properties/>
+    <Request>
+        <Set>
+            <Verb>POST</Verb>
+            <Headers>
+                <Header name="Accept-Encoding">gzip, deflate</Header>
+            </Headers>
+            <Payload contentType="application/json">
+                {
+                  "username":"{private.username}",
+                  "password":"{private.password}"
+                }
+            </Payload>
+        </Set>
+    </Request>
+    <Response>jwtResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>http://aosoriosaul-eval-test.apigee.net/login-api-jwt</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

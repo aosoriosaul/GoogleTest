@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MessageLogging name="LogToCloudLogging">
+  <CloudLogging>
+    <LogName>projects/{organization.name}/logs/example-logs2</LogName>
+    <Message contentType="application/json">{
+        "method": "{request.verb}"}</Message>
+    <Labels>
+      <Label>
+        <Key>key1</Key>
+        <Value>value1</Value>
+      </Label>
+    </Labels>
+    <ResourceType>gce_instance</ResourceType>
+  </CloudLogging>
+</MessageLogging>

@@ -1,0 +1,16 @@
+<APIProxy revision="1" name="integration-proxy">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1690163420488</CreatedAt>
+    <LastModifiedAt>1690163420488</LastModifiedAt>
+    <BasePaths>/integration-proxy</BasePaths>
+    <Policies>
+        <Policy>set-integration-request</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <IntegrationEndpoints>
+        <IntegrationEndpoint>default</IntegrationEndpoint>
+    </IntegrationEndpoints>
+</APIProxy>

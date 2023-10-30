@@ -1,0 +1,18 @@
+<APIProxy revision="1" name="generateToken">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1690163277077</CreatedAt>
+    <LastModifiedAt>1690163277077</LastModifiedAt>
+    <BasePaths>/generatetoken</BasePaths>
+    <Policies>
+        <Policy>JWT-Generate</Policy>
+        <Policy>AM-getKey</Policy>
+        <Policy>AM-responseHeader</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

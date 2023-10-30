@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<IntegrationCallout continueOnError="false" enabled="true" name="Int-integration-callout">
+  <DisplayName>Int-integration-callout</DisplayName>
+  <AsyncExecution>false</AsyncExecution>
+  <Request>integration_request</Request>
+  <Response>integration_response</Response>
+</IntegrationCallout>

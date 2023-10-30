@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Name>set-integration-request</Name>
+      </Step>
+    </Request>
+    <Response>
+      <Step>
+        <Name>Int-callout</Name>
+      </Step>
+    </Response>
+  </PreFlow>
+  <Flows/>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response>
+    </Response>
+  </PostFlow>
+  <RouteRule name="default">
+    <IntegrationEndpoint>default</IntegrationEndpoint>
+  </RouteRule>
+  <HTTPProxyConnection>
+    <BasePath>/integration-callout-proxy</BasePath>
+  </HTTPProxyConnection>
+</ProxyEndpoint>

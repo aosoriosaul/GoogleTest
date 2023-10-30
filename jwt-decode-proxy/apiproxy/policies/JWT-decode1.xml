@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DecodeJWT continueOnError="false" enabled="false" name="JWT-decode1">
+  <DisplayName>JWT-decode1</DisplayName>
+  <!--Source>jwt-variable</Source-->
+</DecodeJWT>

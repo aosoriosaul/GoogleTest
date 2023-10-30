@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>BA-authentication</Name>
+            </Step>
+            <Step>
+                <Name>OAuthV2-generate</Name>
+            </Step>
+            <Step>
+                <Name>VA-verify</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="token">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>BA-authentication</Name>
+                </Step>
+                <Step>
+                    <Name>VA-verify</Name>
+                </Step>
+                <Step>
+                    <Name>OAuthV2-generate</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/token") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/oauth2</BasePath>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

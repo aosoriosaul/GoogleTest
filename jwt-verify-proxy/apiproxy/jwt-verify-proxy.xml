@@ -1,0 +1,18 @@
+<APIProxy revision="7" name="jwt-verify-proxy">
+    <DisplayName>Hello World</DisplayName>
+    <Description>An example API proxy.</Description>
+    <CreatedAt>1690220557802</CreatedAt>
+    <LastModifiedAt>1690220557802</LastModifiedAt>
+    <BasePaths>/v1/hello-world</BasePaths>
+    <Policies>
+        <Policy>EV-gitdemo</Policy>
+        <Policy>JWT-verify</Policy>
+        <Policy>AM-jwtvariable</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

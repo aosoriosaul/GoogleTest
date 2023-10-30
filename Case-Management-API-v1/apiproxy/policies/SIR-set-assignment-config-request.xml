@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SetIntegrationRequest continueOnError="false" enabled="true" name="SIR-set-assignment-config-request">
+  <DisplayName>SIR-set-assignment-config-request</DisplayName>
+  <ProjectId>logging-in728-vg039</ProjectId>
+  <IntegrationRegion>us-central1</IntegrationRegion>
+  <ApiTrigger>api_trigger/test-AssignmentConfig_API_1</ApiTrigger>
+  <Parameters>
+    <Parameter name="input" type="json" ref="request.content"/>
+  </Parameters>
+  <Request>integration_request</Request>
+</SetIntegrationRequest>

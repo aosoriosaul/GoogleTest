@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-messageEU">
+  <DisplayName>AM-messageEU</DisplayName>
+  <Properties/>
+  <Add>
+    <Headers/>
+    <QueryParams/>
+    <FormParams/>
+    <Payload contentType="application/json">{
+    "message": "this request was sent from the EU"}
+    </Payload>
+  </Add>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

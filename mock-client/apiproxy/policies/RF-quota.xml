@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault continueOnError="false" enabled="true" name="RF-quota">
+  <DisplayName>RF-quota-violation</DisplayName>
+  <Properties/>
+  <FaultResponse>
+    <Set>
+      <Headers/>
+      <Payload contentType="application/json">
+                {
+                    "message": "Quota violation.",
+                    "details": "The quota limit was exceeded."
+      }
+      </Payload>
+      <StatusCode>500</StatusCode>
+      <ReasonPhrase>Quota Violation</ReasonPhrase>
+    </Set>
+  </FaultResponse>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

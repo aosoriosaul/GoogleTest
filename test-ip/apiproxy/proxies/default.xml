@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Name>JS-ip</Name>
+      </Step>
+    </Request>
+    <Response/>
+  </PreFlow>
+  <Flows>
+    <Flow name="us-flow">
+      <Description/>
+      <Request>
+        <Step>
+          <!--Condition>request.header.x-request-client-region equals "US"</Condition-->
+          <Name>AM-messageUS</Name>
+        </Step>
+        <Step>
+          <!--Condition>request.header.x-request-client-region equalss "US"</Condition-->
+          <Name>SC-usBackend</Name>
+        </Step>
+      </Request>
+      <Response/>
+      <Condition>request.header.x-request-client-region equals "US"</Condition>
+    </Flow>
+    <Flow name="eu-flow">
+      <Description/>
+      <Request>
+        <Step>
+          <!--Condition>request.header.x-request-client-region Matches "EU"</Condition-->
+          <Name>AM-messageEU</Name>
+        </Step>
+        <Step>
+          <!--Condition>request.header.x-request-client-region equals "EU"</Condition-->
+          <Name>SC-euBackend</Name>
+        </Step>
+      </Request>
+      <Response/>
+      <Condition>request.header.x-request-client-region equals "EU"</Condition>
+    </Flow>
+  </Flows>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <PostClientFlow>
+    <Request/>
+    <Response>
+      <Step>
+        <Name>ML-saveip-region</Name>
+      </Step>
+      <Step>
+        <Name>FC-logging</Name>
+      </Step>
+    </Response>
+  </PostClientFlow>
+  <HTTPProxyConnection>
+    <BasePath>/v1/test-ip</BasePath>
+  </HTTPProxyConnection>
+  <RouteRule name="us-flow">
+    <Condition> request.header.x-request-client-region equals "US" and request.verb = "GET"</Condition>
+    <TargetEndpoint>US-TargetEndpoint</TargetEndpoint>
+  </RouteRule>
+  <RouteRule name="eu-flow">
+    <Condition> request.header.x-request-client-region equals "EU" and request.verb = "GET"</Condition>
+    <TargetEndpoint>EU-TargetEndpoint</TargetEndpoint>
+  </RouteRule>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+</ProxyEndpoint>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SetIntegrationRequest continueOnError="false" enabled="true" name="SIR-get-view-by-id">
+  <DisplayName>SIR-get-view-by-id</DisplayName>
+  <ProjectId>logging-in728-vg039</ProjectId>
+  <IntegrationRegion>us-central1</IntegrationRegion>
+  <ApiTrigger>api_trigger/firestore-get-catalogs_TGR-get-by-id</ApiTrigger>
+  <Parameters>
+    <Parameter name="id" type="string" ref="view-id"/>
+  </Parameters>
+  <Request>integration_request</Request>
+</SetIntegrationRequest>

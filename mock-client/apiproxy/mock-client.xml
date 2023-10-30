@@ -1,0 +1,25 @@
+<APIProxy revision="1" name="mock-client">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1690163003149</CreatedAt>
+    <LastModifiedAt>1690163003149</LastModifiedAt>
+    <BasePaths>/v3/demo</BasePaths>
+    <Policies>
+        <Policy>J2X-gitdemo</Policy>
+        <Policy>AM-gitdemo</Policy>
+        <Policy>EV-gitdemo</Policy>
+        <Policy>SA-traffic-mgmt</Policy>
+        <Policy>VA-gitdemo</Policy>
+        <Policy>OAuth-v20-1</Policy>
+        <Policy>FC-logging</Policy>
+        <Policy>Quota-1</Policy>
+        <Policy>RF-quota</Policy>
+        <Policy>RF-Unauthorized</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

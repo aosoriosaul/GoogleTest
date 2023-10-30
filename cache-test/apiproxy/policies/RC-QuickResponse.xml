@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ResponseCache continueOnError="false" enabled="true" name="RC-QuickResponse">
+  <DisplayName>RC-QuickResponse</DisplayName>
+  <Properties/>
+  <CacheKey>
+    <Prefix/>
+    <!-- <KeyFragment ref="request.uri" type="string"/> -->
+    <KeyFragment ref="request.queryparam.session" type="string"/>
+  </CacheKey>
+  <!-- <CacheResource>apigee-prod-370323__eval"</CacheResource> -->
+  <Scope>Exclusive</Scope>
+  <ExpirySettings>
+    <TimeoutInSec ref="">600</TimeoutInSec>
+  </ExpirySettings>
+  <SkipCacheLookup/>
+  <SkipCachePopulation/>
+</ResponseCache>
