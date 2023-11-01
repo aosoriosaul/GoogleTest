@@ -16,9 +16,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>apigee</groupId>
-    <artifactId>generateToken</artifactId>
+    <artifactId>example-logging</artifactId>
     <version>v1</version>
-    <name>generateToken</name>
+    <name>example-logging</name>
     <packaging>pom</packaging>
     <pluginRepositories>
         <pluginRepository>
@@ -123,4 +123,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
