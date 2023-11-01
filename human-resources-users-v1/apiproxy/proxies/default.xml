@@ -59,7 +59,7 @@
         <Response/>
     </PostFlow>
     <HTTPProxyConnection>
-        <BasePath>/acxiom/human-resources-users/v1</BasePath>
+        <BasePath>/human-resources-users/v1</BasePath>
     </HTTPProxyConnection>
     <RouteRule name="posts">
         <Condition>(proxy.pathsuffix MatchesPath "/posts") and (request.verb = "GET")</Condition>
